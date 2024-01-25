@@ -8,6 +8,10 @@ require("dotenv").config();
 app.use(bodyParser.json());
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.send("Backend");
+});
+
 app.post("/insertCustomer", (req, res) => {
   db.insertCustomer(req.body);
   res.sendStatus(200);
